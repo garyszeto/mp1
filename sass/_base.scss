@@ -1,13 +1,281 @@
-@import url('http://fonts.googleapis.com/css?family=Bree+Serif|Merriweather');
-@import url('http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+@import url('http://fonts.googleapis.com/css?family=Bree+Serif|Merriweather|Pathway+Gothic+One|Marcellus+SC');
+//@import url('http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
 
 
-h1 {
-  font-size: 2.2rem;
-  color: lighten($orange, 25);
+//navbar
+
+ul{ float: right; }
+li{ display: inline; float: left;}
+img.logo{float: left; }
+nav{ width: 960px; margin: 0 auto;} 
+
+header{ background: #FFFFFF; border-bottom: 1px solid #aaaaaa; float: left; width: 100%; position: fixed; z-index: 10; }
+header a{ color: #969696; text-decoration: none; text-transform: uppercase; font-size: 1em; }
+header a.active, header a:hover{ color: #3d3d3d; }
+header li{ margin-right: 30px; }
+.active-nav {
+	color: $color4;
 }
 
-.test {
-  font-size: 1.2rem;
-  color: $blue;
+header.large{ height: 77px; }
+header.large img{ width: 70px; height: 70px; padding-top:3px;}
+header.large li{ margin-top: 35px; }
+
+header.small{ height: 69px; }
+header.small img{ width: 60px; height: 60px; padding-top:4px;}
+header.small li{ margin-top: 30px; }
+
+header,nav, a, img, li{
+  transition: all .3s;
+  -moz-transition: all .3s; /* Firefox 4 */
+  -webkit-transition: all .3s; /* Safari and Chrome */
+  -o-transition: all .3s; /* Opera */
+}
+
+#home {
+	background: url('../img/hk.jpg') fixed no-repeat;
+	background-size: cover;
+	height: 1080px;
+	position:relative;
+	img {
+		transform: translateX(50%);
+		top:35%;
+		position:absolute;
+	}
+
+}
+section {
+	width: 100%;
+	background: $color5;
+}
+.row {
+	width: 100%;
+	max-width: 960px;
+	padding: 30px;
+	margin: 0 auto;
+}
+
+.col {
+	display: inline-block;
+	margin: 0 auto;
+
+
+}
+
+.half {
+	width: 49%;
+	max-width: 480px;
+}
+
+#art {
+	background:$color1;
+}
+
+#second {
+	transform: translateX(50%);
+}
+
+#arttitle {
+	color: $color5;
+}
+
+.modal {
+  background-color: rgba(#222222, 0.9);
+  cursor: pointer;
+  height: 100%;
+  left: 0;
+  overflow-y: scroll;
+  padding: 24px;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  z-index: 99999;
+  img {
+    box-shadow: 0 0 6px 3px #333;
+    z-index: 100000;
+  }
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+//video
+.video-bg video {
+	right: 0;
+    left: auto;
+    visibility: visible;
+    width: 100%;
+    overflow-y: hidden;
+    position:relative;
+    z-index:0;
+}
+
+.video-bg.video-loaded {
+    background-image: none;
+}
+
+.video-bg.playing video {
+    opacity: 0.7;
+}
+
+
+.video-bg {
+	background-image: url("img/kproject.jpg");
+    min-height: 540px;
+    height: 100%;
+    box-sizing: border-box;
+    background-position: right top;
+    position:relative;
+}
+
+.overlay {
+	position:absolute;
+    z-index:1;
+}
+
+.overlay-content {
+	color: #FFFFFF;
+	font-size: 10em;
+	font-family: "Pathway Gothic One";
+}
+
+.align-vert {
+    top:50%;
+    transform: translateY(-50%);
+}
+
+.align-horiz {
+    left:50%;
+    transform: translateX(-50%);
+}
+
+//carousel code
+
+#carousel {
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    position: relative;
+    margin: 0px auto;
+}
+
+#slides {
+    width: 500%;
+    height: 600px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#slides .slide {
+    width: 20%;
+    height: 600px;
+    float: left;
+    background-color: gray;
+
+    img {
+    	overflow:hidden;
+    }
+}
+
+#slides .slide:nth-child(2n+1) {
+    background-color: #333;
+}
+
+#slides h1 {
+    margin: 25px 60px;
+    color: $color5;
+    font-size: 3em;
+    text-shadow: 0 -1px 1px #333;
+}
+
+.sliderow {
+	width: 960px;
+	margin: 0 auto;
+    transform: translateY(50%);
+}
+
+#slidestrip {
+	border: 1px solid $color4;
+	width: 69px;
+	margin: 20px auto;
+
+}
+
+/* arrow navigation */
+
+.arrow {
+    display: block;
+    position: absolute;
+    top: 240px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 28px 21px;
+    border-color: transparent;
+    outline: none;
+}
+
+.arrow:hover {
+    opacity: .5;
+    filter: alpha(opacity=50);
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+}
+
+#left-button {
+    left: 0;
+    border-right-color: #FFFFFF;
+}
+
+#right-button {
+    right: 0;
+    border-left-color: #FFFFFF;
+}
+
+body {
+	background-color: #FCFCFC;
+}
+
+.content {
+//	padding-top:90px;
+	text-align:center;
+}
+
+
+.heading {
+	text-transform: uppercase;
+	text-align:center;
+}
+
+//typography settings
+
+h1 {
+  font-size: 2.9rem;
+  color: $color2;
+}
+
+.sub {
+  font-size: 1.7rem;
+  color: $color3;
+}
+
+#strip {
+	border: 1px solid $color1;
+	width: 69px;
+	margin: 20px auto;
+
+}
+
+footer a {
+	text-decoration: none;
+}
+
+.fa-facebook-official {
+	color: $facebookblue;
+}
+
+.fa-github {
+	color: $color1;
 }

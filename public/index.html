@@ -2,14 +2,151 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>MP1 Starter</title>
+  <title>Gary Szeto</title>
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/x-icon" href="img/llama2.png">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 </head>
 <body>
-  <h1>Hello World!</h1>
-  <div class="test"> My name is Anthony.</div>
+  <header class="large">
+    <nav>
+      <img class=“logo” src="img/llama3.png"/>
+      <ul>
+        <li><a href="#home" class="active-nav" id="l1">Home</a></li>
+        <li><a href="#art" id="l2">Art</a></li>
+        <li><a href="#dance" id="l3">Dance</a></li>
+        <li><a href="#work" id="l4">Work</a></li>
+        <li><a href="#about" id="l5">About</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <div id="home">
+    <img src="img/name.png">
+
+  </div>
+
+  <div class="content">
+     <section>
+      <div class="row">
+        <div class = "col">
+          <h1>Welcome!</h1>
+          <div id="strip"></div>
+          <p class="sub"> My name is Gary Szeto. Welcome to my personal portfolio! This is a compilation of small previews to different parts of my life: my art, dancing, and extracurricular work.
+          </p>
+        </div>
+      </div>
+
+    </section>
+
+    <section id="art">
+
+      <div class="row art">
+
+        <h1 id="arttitle">Art</h1>
+        <div id="slidestrip"></div>
+
+        <div class="col half">
+          <a href="img/art1.png" class="open-modal"><img src="img/art1.png" height="600px" class="align-horiz"></a>
+        </div>
+
+        <div class="col half" id="second">
+          <a href="img/art2.png" class="open-modal"><img src="img/art2.png" height="600px"></a>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section id="dance">
+
+      <div class="video-bg video-loaded">
+        <video class="video" autoplay="autoplay" muted="muted" width="100%" height="auto" poster="img/kproject.jpg">
+            <source src="img/kproject.mp4" type="video/mp4">
+        </video>
+        <div class="overlay align-vert align-horiz">
+          <h1 class="overlay-content align-vert">Dance: K-Project</h1>
+        </div>
+      </div>
+    
+    </section>
+
+    <section id="work">
+      <div id="carousel">
+        <div id="slides">
+            <div class="slide">
+              <div class="sliderow">
+                <h1>Work</h1>
+                <div id="slidestrip"></div>
+                <p class="sub"> On campus, I am a part of the Asian American Association, a register-student organization of UIUC. I act as one of the Public Relations chairs. We are responsible for the social media of the organization and reaching out to members through our website, Facebook, etc. <br><br>
+                  In the following slides, I have presented a few of the event banners I have made to advertise for AAA events.
+                </p>
+              </div>                
+            </div>
+            
+            <div class="slide">
+              <a href="https://www.facebook.com/events/349016401923358/" target="blank"><img src="img/slide1.png"></a>
+            </div>
+            
+            <div class="slide">
+              <a href="https://www.facebook.com/events/843801788997772/" target="blank"><img src="img/slide2.png"></a>
+            </div>
+            
+            <div class="slide">
+              <a href="https://www.facebook.com/events/783012815092143/" target="blank"><img src="img/slide3.png"></a>
+            </div>
+            
+            <div class="slide">
+              <a href="https://www.facebook.com/events/1489336891315585/" target="blank"><img src="img/slide4.png"></a>
+            </div>
+        </div>
+      
+        <a href="#" id="left-button" class="arrow"></a>
+        <a href="#" id="right-button" class="arrow"></a>
+      </div>
+    </section>
+
+    <section>
+      <div class="row">
+        <div class = "col">
+          <h1>Thanks for visiting!</h1>
+          <div id="strip"></div>
+          <p class="sub"> Hope you enjoyed your stay!
+          </p>
+        </div>
+      </div>
+
+    </section>
+
+    <footer id="about">
+      <div class="row">
+
+        <div class="col half">
+
+          
+          <a href="https://www.facebook.com/garythesuperazn" target="blank">
+            <i class="fa fa-facebook-official fa-4x"></i>
+            <h2 class="sub">Check me out on Facebook!</h2>
+          </a>
+
+        </div>
+
+        <div class="col half">
+
+          <a href="https://github.com/raku-ten/mp1" target="blank">
+            <i class="fa fa-github fa-4x"></i>
+            <h2 class="sub">See this on GitHub!</h2>
+          </a>
+
+        </div>
+
+      </div>
+
+    </footer>
+
+
+  </div>
 
   <script src="lib/jquery-2.1.3.min/index.js"></script>
   <script src="js/script.js"></script>
