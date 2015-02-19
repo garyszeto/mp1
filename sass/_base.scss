@@ -38,7 +38,8 @@ header,nav, a, img, li{
 	height: 1080px;
 	position:relative;
 	img {
-		transform: translateX(50%);
+		left:50%;
+		transform:translateX(-50%);
 		top:35%;
 		position:absolute;
 	}
@@ -175,6 +176,7 @@ section {
 
     img {
     	overflow:hidden;
+    	background:cover;
     }
 }
 
