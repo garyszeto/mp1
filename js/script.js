@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	
+	//smooth scrolling
 	$(function() {
   $("nav a").click(function() {
       var target = $(this.hash);
@@ -101,64 +101,44 @@ $(document).on("scroll",function(){
     }
 });
 
+//carousel
 $(function() {
     function changeSlide( newSlide ) {
-        // cancel any timeout
-        clearTimeout( slideTimeout );
-        
-        // change the currSlide value
         currSlide = newSlide;
         
-        // make sure the currSlide value is not too low or high
         if ( currSlide > maxSlide ) currSlide = 0;
         else if ( currSlide < 0 ) currSlide = maxSlide;
         
         // animate the slide reel
-        $slideReel.animate({
-            left : currSlide * -$(window).width()
-        }, 400, 'swing', function() {
-            // hide / show the arrows depending on which frame it's on
-            if ( currSlide == 0 ) $slideLeftNav.hide();
-            else $slideLeftNav.show();
+        $slides.animate({ left : currSlide * -$(window).width() }, 400, 'swing', function() {
+            if ( currSlide == 0 ) $leftnav.hide();
+            else $leftnav.show();
             
-            if ( currSlide == maxSlide ) $slideRightNav.hide();
-            else $slideRightNav.show();
-            
-        });
-        
+            if ( currSlide == maxSlide ) $rightnav.hide();
+            else $rightnav.show();
+        });        
     }
     
     function nextSlide() {
         changeSlide( currSlide + 1 );
     }
     
-    // define some variables / DOM references
-    var activeSlideshow = true,
-    currSlide = 0,
-    slideTimeout,
-    $slideshow = $('#carousel'),
-    $slideReel = $slideshow.find('#slides'),
-    maxSlide = $slideReel.children().length - 1,
-    $slideLeftNav = $slideshow.find('#left-button'),
-    $slideRightNav = $slideshow.find('#right-button');
-    
-    // set navigation click events
+    var currSlide = 0,
+    $carousel = $('#carousel'),
+    $slides = $carousel.find('#slides'),
+    maxSlide = $slides.children().length - 1,
+    $leftnav = $carousel.find('#left-button'),
+    $rightnav = $carousel.find('#right-button');
     
     // left arrow
-    $slideLeftNav.click(function(ev) {
-        ev.preventDefault();
-        
-        activeSlideshow = false;
-        
+    $leftnav.click(function(ev) {
+        ev.preventDefault();     
         changeSlide( currSlide - 1 );
     });
     
     // right arrow
-    $slideRightNav.click(function(ev) {
+    $rightnav.click(function(ev) {
         ev.preventDefault();
-        
-        activeSlideshow = false;
-        
         changeSlide( currSlide + 1 );
     });
     
